@@ -1,11 +1,11 @@
 package com.test.hib.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
+@RequiredArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
 @Entity
 @Table(name = "USER")
@@ -14,26 +14,21 @@ public class User {
     @Column(name = "USER_ID")
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
+    @NonNull
     String fullname;
+    @NonNull
     String email;
+    @NonNull
     String password;
+    @NonNull
     int age;
+    @NonNull
     double salary;
+    @NonNull
     String city;
 
-    public User() {
 
-    }
-    public User(String fullname, String email, String password, int age, double salary, String city) {
-        this.id = id;
-        this.fullname = fullname;
-        this.email = email;
-        this.password = password;
-        this.age = age;
-        this.salary = salary;
-        this.city = city;
 
-    }
 }
 
 
